@@ -1,0 +1,26 @@
+<div class="login-container">
+  <h1>Login</h1>
+  <p>Please authenticate using Google OAuth 2.0</p>
+
+  <button class="google-btn" (click)="onGoogleLogin()" [disabled]="authResource.isLoading()">
+    Login with Google
+  </button>
+
+  @if (authResource.isLoading()) {
+    <div class="loading">
+      <p>Authenticating...</p>
+    </div>
+  }
+
+  @if (authResource.error()) {
+    <div class="error">
+      <p>Authentication failed. Please try again.</p>
+    </div>
+  }
+
+  @if (authResource.value()) {
+    <div class="success">
+      <p>Success! Redirecting...</p>
+    </div>
+  }
+</div>
