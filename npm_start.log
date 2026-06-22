@@ -1,0 +1,48 @@
+
+> host-microfront@0.0.0 start
+> ng serve --port 4205
+
+- Generating browser application bundles (phase: setup)...
+[32m✔[39m Browser application bundle generation complete.
+
+Initial chunk files   | Names                |  Raw size
+remoteEntry.js        | hostMicrofront       | 160.84 kB |
+styles.css, styles.js | styles               | 160.62 kB |
+main.js               | main                 | 160.14 kB |
+
+                      | Initial total        | 481.60 kB
+
+Lazy chunk files      | Names                |  Raw size
+580.js                | -                    |   1.25 MB |
+845.js                | -                    | 410.42 kB |
+219.js                | -                    | 345.13 kB |
+691.js                | -                    | 266.53 kB |
+72.js                 | -                    | 266.53 kB |
+316.js                | -                    | 204.30 kB |
+935.js                | -                    | 204.30 kB |
+456.js                | -                    | 156.01 kB |
+75.js                 | -                    | 156.01 kB |
+443.js                | -                    | 107.32 kB |
+824.js                | -                    | 106.20 kB |
+436.js                | -                    |  69.77 kB |
+55.js                 | -                    |  68.64 kB |
+20.js                 | bootstrap            |  64.39 kB |
+699.js                | -                    |  32.75 kB |
+517.js                | -                    |  22.96 kB |
+15.js                 | features-login-login |  20.79 kB |
+80.js                 | -                    |  11.68 kB |
+513.js                | -                    |   3.78 kB |
+894.js                | -                    |   2.02 kB |
+323.js                | features-home-home   |   1.81 kB |
+
+Build at: 2026-06-22T14:19:40.671Z - Hash: 4659af6d8d30dc02 - Time: 15291ms
+
+Warning: /app/src/app/app.routes.ts depends on '@angular-architects/module-federation'. CommonJS or AMD dependencies can cause optimization bailouts.
+For more info see: https://angular.dev/tools/cli/build#configuring-commonjs-dependencies
+
+
+
+** Angular Live Development Server is listening on localhost:4205, open your browser on http://localhost:4205/ **
+
+
+✔ Compiled successfully.
