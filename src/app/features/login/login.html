@@ -1,26 +1,62 @@
 <div class="login-container">
-  <h1>Login</h1>
-  <p>Please authenticate using Google OAuth 2.0</p>
+  <div class="login-card">
+    <h1>Login</h1>
+    <p>Sign in to access the system</p>
 
-  <button class="google-btn" (click)="onGoogleLogin()" [disabled]="authResource.isLoading()">
-    Login with Google
-  </button>
+    <form (submit)="onSubmit(); $event.preventDefault()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="user@example.com"
+          required
+        >
+      </div>
 
-  @if (authResource.isLoading()) {
-    <div class="loading">
-      <p>Authenticating...</p>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+          required
+        >
+      </div>
+
+      <button
+        type="submit"
+        class="login-btn"
+        [disabled]="authResource.isLoading() || !email || !password"
+      >
+        @if (authResource.isLoading()) {
+          Authenticating...
+        } @else {
+          Sign In
+        }
+      </button>
+    </form>
+
+    @if (authResource.error()) {
+      <div class="error-msg">
+        <p>Authentication failed. Please check your credentials.</p>
+      </div>
+    }
+
+    @if (authResource.value()) {
+      <div class="success" style="color: green; margin-top: 1rem;">
+        <p>Success! Redirecting...</p>
+      </div>
+    }
+
+    <div class="example-data">
+      <p><strong>Example Data (populated by backend):</strong></p>
+      <p>User: user@example.com / password</p>
+      <p>Admin: admin@example.com / password</p>
     </div>
-  }
-
-  @if (authResource.error()) {
-    <div class="error">
-      <p>Authentication failed. Please try again.</p>
-    </div>
-  }
-
-  @if (authResource.value()) {
-    <div class="success">
-      <p>Success! Redirecting...</p>
-    </div>
-  }
+  </div>
 </div>
